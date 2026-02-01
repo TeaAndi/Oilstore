@@ -34,7 +34,7 @@ export class ClienteFormModalComponent implements OnInit {
     Correo_Cliente: '',
   };
 
-  private apiUrl = 'http://localhost:3000/api/cliente';
+  private apiUrl = 'https://mighty-breads-own.loca.lt/api/cliente';
 
   constructor(
     private modalController: ModalController,

@@ -29,7 +29,7 @@ export class ClientePage implements OnInit {
   fabHidden = false;
   private lastScrollTop = 0;
   private scrollThreshold = 10;
-  private apiUrl = 'http://localhost:3000/api/cliente';
+  private apiUrl = 'https://mighty-breads-own.loca.lt/api/cliente';
 
   constructor(
     private router: Router,

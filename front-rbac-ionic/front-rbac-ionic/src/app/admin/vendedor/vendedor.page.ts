@@ -32,7 +32,7 @@ export class VendedorPage implements OnInit, OnDestroy {
   fabHidden = false;
   private lastScrollTop = 0;
   private scrollThreshold = 10;
-  private apiUrl = 'http://localhost:3000/api/vendedor';
+  private apiUrl = 'https://mighty-breads-own.loca.lt/api/vendedor';
 
   constructor(
     private router: Router,

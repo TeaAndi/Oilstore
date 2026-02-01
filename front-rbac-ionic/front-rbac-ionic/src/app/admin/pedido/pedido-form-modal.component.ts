@@ -68,7 +68,7 @@ export class PedidoFormModalAdminComponent implements OnInit {
   productoSeleccionado = '';
   cantidadSeleccionada = 1;
 
-  private apiUrl = 'http://localhost:3000/api';
+  private apiUrl = 'https://mighty-breads-own.loca.lt/api';
 
   constructor(
     private modalController: ModalController,

@@ -34,7 +34,7 @@ export class VendedorFormModalComponent implements OnInit {
     Correo_Vendedor: '',
   };
 
-  private apiUrl = 'http://localhost:3000/api/vendedor';
+  private apiUrl = 'https://mighty-breads-own.loca.lt/api/vendedor';
 
   constructor(
     private modalController: ModalController,

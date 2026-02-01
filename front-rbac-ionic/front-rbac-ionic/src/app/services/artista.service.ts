@@ -13,7 +13,7 @@ export interface Artista {
 
 @Injectable({ providedIn: 'root' })
 export class ArtistaService {
-  private baseUrl = 'http://localhost:3000/api';
+  private baseUrl = 'https://mighty-breads-own.loca.lt/api';
 
   constructor(private http: HttpClient) {}
 

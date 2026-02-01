@@ -36,7 +36,7 @@ export class ProductoFormModalComponent implements OnInit {
     Unidad_Medida: '',
   };
 
-  private apiUrl = 'http://localhost:3000/api/producto';
+  private apiUrl = 'https://mighty-breads-own.loca.lt/api/producto';
 
   constructor(
     private modalController: ModalController,

@@ -35,7 +35,7 @@ export class PedidoPage implements OnInit, OnDestroy {
   fabHidden = false;
   private lastScrollTop = 0;
   private scrollThreshold = 10;
-  private apiUrl = 'http://localhost:3000/api/pedido';
+  private apiUrl = 'https://mighty-breads-own.loca.lt/api/pedido';
 
   constructor(
     private router: Router,

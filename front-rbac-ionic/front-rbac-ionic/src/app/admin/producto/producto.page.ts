@@ -32,7 +32,7 @@ export class ProductoPage implements OnInit, OnDestroy {
   fabHidden = false;
   private lastScrollTop = 0;
   private scrollThreshold = 10;
-  private apiUrl = 'http://localhost:3000/api/producto';
+  private apiUrl = 'https://mighty-breads-own.loca.lt/api/producto';
 
   constructor(
     private router: Router,
