@@ -9,7 +9,7 @@ module.exports = {
     user: process.env.SQLSERVER_USER,
     password: process.env.SQLSERVER_PASSWORD,
     options: {
-      encrypt: false, // local
+      encrypt: true,
       trustServerCertificate: true
     },
     pool: {

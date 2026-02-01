@@ -12,7 +12,7 @@ async function getAll(req, res) {
         Stock_Producto,
         Valor_Producto,
         Unidad_Medida
-      FROM dbo.producto
+      FROM dbo.Producto
       ORDER BY Id_Producto DESC
     `;
 
@@ -36,7 +36,7 @@ async function create(req, res) {
     } = req.body;
 
     const q = `
-      INSERT INTO dbo.producto (
+      INSERT INTO dbo.Producto (
         Nombre_Producto,
         Descripcion_Producto,
         Stock_Producto,
@@ -93,7 +93,7 @@ async function update(req, res) {
     } = req.body;
 
     const q = `
-      UPDATE dbo.producto
+      UPDATE dbo.Producto
       SET
         Nombre_Producto = @Nombre_Producto,
         Descripcion_Producto = @Descripcion_Producto,
@@ -138,7 +138,7 @@ async function remove(req, res) {
     if (!id) return fail(res, 400, "id inválido");
 
     const q = `
-      DELETE FROM dbo.producto
+      DELETE FROM dbo.Producto
       OUTPUT
         DELETED.Id_Producto,
         DELETED.Nombre_Producto,
