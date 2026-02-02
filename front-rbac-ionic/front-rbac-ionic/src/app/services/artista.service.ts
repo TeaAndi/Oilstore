@@ -13,23 +13,27 @@ export interface Artista {
 
 @Injectable({ providedIn: 'root' })
 export class ArtistaService {
-  private baseUrl = 'https://mighty-breads-own.loca.lt/api';
+  private baseUrl = 'https://stereographic-martine-solitarily.ngrok-free.dev/api';
 
   constructor(private http: HttpClient) {}
 
   getAll(): Observable<any> {
-    return this.http.get<any>(`${this.baseUrl}/artista`);
+    const headers = { 'ngrok-skip-browser-warning': 'true' };
+    return this.http.get<any>(`${this.baseUrl}/artista`, { headers });
   }
 
   create(data: Partial<Artista>): Observable<any> {
-    return this.http.post<any>(`${this.baseUrl}/artista`, data);
+    const headers = { 'ngrok-skip-browser-warning': 'true' };
+    return this.http.post<any>(`${this.baseUrl}/artista`, data, { headers });
   }
 
   update(id: string, data: Partial<Artista>): Observable<any> {
-    return this.http.put<any>(`${this.baseUrl}/artista/${id}`, data);
+    const headers = { 'ngrok-skip-browser-warning': 'true' };
+    return this.http.put<any>(`${this.baseUrl}/artista/${id}`, data, { headers });
   }
 
   remove(id: string): Observable<any> {
-    return this.http.delete<any>(`${this.baseUrl}/artista/${id}`);
+    const headers = { 'ngrok-skip-browser-warning': 'true' };
+    return this.http.delete<any>(`${this.baseUrl}/artista/${id}`, { headers });
   }
 }

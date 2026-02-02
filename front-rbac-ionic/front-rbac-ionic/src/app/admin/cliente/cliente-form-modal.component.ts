@@ -19,7 +19,7 @@ interface Cliente {
   templateUrl: './cliente-form-modal.component.html',
   styleUrls: ['./cliente-form-modal.component.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule, HttpClientModule]
+  imports: [IonicModule, CommonModule, FormsModule]
 })
 export class ClienteFormModalComponent implements OnInit {
   @Input() token: string = '';
@@ -34,7 +34,7 @@ export class ClienteFormModalComponent implements OnInit {
     Correo_Cliente: '',
   };
 
-  private apiUrl = 'https://mighty-breads-own.loca.lt/api/cliente';
+  private apiUrl = 'https://stereographic-martine-solitarily.ngrok-free.dev/api/cliente';
 
   constructor(
     private modalController: ModalController,
@@ -61,7 +61,7 @@ export class ClienteFormModalComponent implements OnInit {
       return;
     }
 
-    const headers = { Authorization: `Bearer ${this.token}` };
+    const headers = { Authorization: `Bearer ${this.token}`, 'ngrok-skip-browser-warning': 'true' };
     const body = {
       Nombre_Cliente: this.nuevoCliente.Nombre_Cliente,
       Direccion_Cliente: this.nuevoCliente.Direccion_Cliente || null,

@@ -26,14 +26,14 @@ interface Pedido {
   selector: 'app-pedido',
   templateUrl: './pedido.page.html',
   styleUrls: ['./pedido.page.scss'],
-  imports: [IonicModule, CommonModule, FormsModule, RouterModule, HttpClientModule],
+  imports: [IonicModule, CommonModule, FormsModule, RouterModule],
 })
 export class PedidoPage implements OnInit {
   pedidos: Pedido[] = [];
   fabHidden = false;
   private lastScrollTop = 0;
   private scrollThreshold = 10;
-  private apiUrl = 'https://mighty-breads-own.loca.lt/api/pedido';
+  private apiUrl = 'https://stereographic-martine-solitarily.ngrok-free.dev/api/pedido';
 
   constructor(
     private router: Router,

@@ -22,14 +22,14 @@ interface Producto {
   selector: 'app-producto',
   templateUrl: './producto.page.html',
   styleUrls: ['./producto.page.scss'],
-  imports: [IonicModule, CommonModule, FormsModule, RouterModule, HttpClientModule],
+  imports: [IonicModule, CommonModule, FormsModule, RouterModule],
 })
 export class ProductoPage implements OnInit {
   productos: Producto[] = [];
   fabHidden = false;
   private lastScrollTop = 0;
   private scrollThreshold = 10; // px para evitar parpadeos
-  private apiUrl = 'https://mighty-breads-own.loca.lt/api/producto';
+  private apiUrl = 'https://stereographic-martine-solitarily.ngrok-free.dev/api/producto';
 
   constructor(
     private router: Router,
@@ -85,7 +85,7 @@ export class ProductoPage implements OnInit {
 
   cargarProductos() {
     const token = this.auth.token;
-    const headers = { Authorization: `Bearer ${token}` };
+    const headers = { Authorization: `Bearer ${token}`, 'ngrok-skip-browser-warning': 'true' };
     this.http.get<any>(this.apiUrl, { headers }).subscribe({
       next: (response) => {
         if (response.ok) {
@@ -164,7 +164,7 @@ export class ProductoPage implements OnInit {
   }
 
   eliminarProducto(producto: Producto) {
-    const headers = { Authorization: `Bearer ${this.auth.token}` };
+    const headers = { Authorization: `Bearer ${this.auth.token}`, 'ngrok-skip-browser-warning': 'true' };
     this.http.delete<any>(`${this.apiUrl}/${encodeURIComponent(producto.Id_Producto)}`, { headers }).subscribe({
       next: (response) => {
         if (response.ok) {

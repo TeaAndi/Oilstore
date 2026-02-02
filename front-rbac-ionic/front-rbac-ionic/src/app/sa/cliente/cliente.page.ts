@@ -22,14 +22,14 @@ interface Cliente {
   selector: 'app-cliente',
   templateUrl: './cliente.page.html',
   styleUrls: ['./cliente.page.scss'],
-  imports: [IonicModule, CommonModule, FormsModule, RouterModule, HttpClientModule],
+  imports: [IonicModule, CommonModule, FormsModule, RouterModule],
 })
 export class ClientePage implements OnInit {
   clientes: Cliente[] = [];
   fabHidden = false;
   private lastScrollTop = 0;
   private scrollThreshold = 10;
-  private apiUrl = 'https://mighty-breads-own.loca.lt/api/cliente';
+  private apiUrl = 'https://stereographic-martine-solitarily.ngrok-free.dev/api/cliente';
 
   constructor(
     private router: Router,

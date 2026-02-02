@@ -2,10 +2,16 @@ const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
 
+
 const app = express();
 
-// Middlewares básicos
-app.use(cors());
+// Configuración CORS para permitir solicitudes desde Ionic (localhost:8100) y cualquier otro origen
+app.use(cors({
+  origin: '*', // Puedes cambiar '*' por ['http://localhost:8100'] para mayor seguridad
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'bypass-tunnel-reminder', 'ngrok-skip-browser-warning']
+}));
 app.use(express.json());
 
 // Rutas

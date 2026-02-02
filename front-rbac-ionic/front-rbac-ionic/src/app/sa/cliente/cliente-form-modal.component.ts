@@ -19,7 +19,7 @@ interface Cliente {
   templateUrl: './cliente-form-modal.component.html',
   styleUrls: ['./cliente-form-modal.component.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule, HttpClientModule]
+  imports: [IonicModule, CommonModule, FormsModule]
 })
 export class ClienteFormModalComponent implements OnInit {
   @Input() token: string = '';

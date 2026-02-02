@@ -23,7 +23,7 @@ interface Producto {
   selector: 'app-producto',
   templateUrl: './producto.page.html',
   styleUrls: ['./producto.page.scss'],
-  imports: [IonicModule, CommonModule, FormsModule, RouterModule, HttpClientModule],
+  imports: [IonicModule, CommonModule, FormsModule, RouterModule],
 })
 export class ProductoPage implements OnInit, OnDestroy {
   productos: Producto[] = [];
@@ -32,7 +32,7 @@ export class ProductoPage implements OnInit, OnDestroy {
   fabHidden = false;
   private lastScrollTop = 0;
   private scrollThreshold = 10;
-  private apiUrl = 'https://mighty-breads-own.loca.lt/api/producto';
+  private apiUrl = 'https://stereographic-martine-solitarily.ngrok-free.dev/api/producto';
 
   constructor(
     private router: Router,

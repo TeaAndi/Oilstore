@@ -22,14 +22,14 @@ interface Vendedor {
   selector: 'app-vendedor',
   templateUrl: './vendedor.page.html',
   styleUrls: ['./vendedor.page.scss'],
-  imports: [IonicModule, CommonModule, FormsModule, RouterModule, HttpClientModule],
+  imports: [IonicModule, CommonModule, FormsModule, RouterModule],
 })
 export class VendedorPage implements OnInit {
   vendedores: Vendedor[] = [];
   fabHidden = false;
   private lastScrollTop = 0;
   private scrollThreshold = 10;
-  private apiUrl = 'https://mighty-breads-own.loca.lt/api/vendedor';
+  private apiUrl = 'https://stereographic-martine-solitarily.ngrok-free.dev/api/vendedor';
 
   constructor(
     private router: Router,

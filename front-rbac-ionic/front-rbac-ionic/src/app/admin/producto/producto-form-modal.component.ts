@@ -20,7 +20,7 @@ interface Producto {
   templateUrl: './producto-form-modal.component.html',
   styleUrls: ['./producto-form-modal.component.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule, HttpClientModule]
+  imports: [IonicModule, CommonModule, FormsModule]
 })
 export class ProductoFormModalAdminComponent implements OnInit {
   @Input() token: string = '';
@@ -36,7 +36,7 @@ export class ProductoFormModalAdminComponent implements OnInit {
     Unidad_Medida: '',
   };
 
-  private apiUrl = 'https://mighty-breads-own.loca.lt/api/producto';
+  private apiUrl = 'https://stereographic-martine-solitarily.ngrok-free.dev/api/producto';
 
   constructor(
     private modalController: ModalController,
@@ -64,7 +64,7 @@ export class ProductoFormModalAdminComponent implements OnInit {
       return;
     }
 
-    const headers = { Authorization: `Bearer ${this.token}` };
+    const headers = { Authorization: `Bearer ${this.token}`, 'ngrok-skip-browser-warning': 'true' };
     const body = {
       Nombre_Producto: this.nuevoProducto.Nombre_Producto.trim(),
       Descripcion_Producto: this.nuevoProducto.Descripcion_Producto?.trim() || null,

@@ -44,7 +44,7 @@ interface DetallePedido {
   templateUrl: './pedido-form-modal.component.html',
   styleUrls: ['./pedido-form-modal.component.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule, HttpClientModule]
+  imports: [IonicModule, CommonModule, FormsModule]
 })
 export class PedidoFormModalAdminComponent implements OnInit {
   @Input() token = '';
@@ -68,7 +68,7 @@ export class PedidoFormModalAdminComponent implements OnInit {
   productoSeleccionado = '';
   cantidadSeleccionada = 1;
 
-  private apiUrl = 'https://mighty-breads-own.loca.lt/api';
+  private apiUrl = 'https://stereographic-martine-solitarily.ngrok-free.dev/api';
 
   constructor(
     private modalController: ModalController,

@@ -19,7 +19,7 @@ interface Vendedor {
   templateUrl: './vendedor-form-modal.component.html',
   styleUrls: ['./vendedor-form-modal.component.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule, HttpClientModule]
+  imports: [IonicModule, CommonModule, FormsModule]
 })
 export class VendedorFormModalComponent implements OnInit {
   @Input() token = '';
@@ -34,7 +34,7 @@ export class VendedorFormModalComponent implements OnInit {
     Correo_Vendedor: '',
   };
 
-  private apiUrl = 'https://mighty-breads-own.loca.lt/api/vendedor';
+  private apiUrl = 'https://stereographic-martine-solitarily.ngrok-free.dev/api/vendedor';
 
   constructor(
     private modalController: ModalController,
@@ -56,7 +56,7 @@ export class VendedorFormModalComponent implements OnInit {
       return;
     }
 
-    const headers = { Authorization: `Bearer ${this.token}` };
+    const headers = { Authorization: `Bearer ${this.token}`, 'ngrok-skip-browser-warning': 'true' };
     const body = {
       Nombre_Vendedor: this.nuevoVendedor.Nombre_Vendedor,
       Direccion_Vendedor: this.nuevoVendedor.Direccion_Vendedor || null,

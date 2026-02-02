@@ -23,7 +23,7 @@ interface Vendedor {
   selector: 'app-vendedor-admin',
   templateUrl: './vendedor.page.html',
   styleUrls: ['./vendedor.page.scss'],
-  imports: [IonicModule, CommonModule, FormsModule, RouterModule, HttpClientModule],
+  imports: [IonicModule, CommonModule, FormsModule, RouterModule],
 })
 export class VendedorPage implements OnInit, OnDestroy {
   vendedores: Vendedor[] = [];
@@ -32,7 +32,7 @@ export class VendedorPage implements OnInit, OnDestroy {
   fabHidden = false;
   private lastScrollTop = 0;
   private scrollThreshold = 10;
-  private apiUrl = 'https://mighty-breads-own.loca.lt/api/vendedor';
+  private apiUrl = 'https://stereographic-martine-solitarily.ngrok-free.dev/api/vendedor';
 
   constructor(
     private router: Router,
@@ -71,7 +71,7 @@ export class VendedorPage implements OnInit, OnDestroy {
   }
 
   cargarVendedores() {
-    const headers = { Authorization: `Bearer ${this.auth.token}` };
+    const headers = { Authorization: `Bearer ${this.auth.token}`, 'ngrok-skip-browser-warning': 'true' };
     this.http.get<any>(this.apiUrl, { headers }).subscribe({
       next: (response) => {
         if (response.ok) {
@@ -196,7 +196,7 @@ export class VendedorPage implements OnInit, OnDestroy {
   }
 
   eliminarVendedor(vendedor: Vendedor) {
-    const headers = { Authorization: `Bearer ${this.auth.token}` };
+    const headers = { Authorization: `Bearer ${this.auth.token}`, 'ngrok-skip-browser-warning': 'true' };
     this.http.delete<any>(`${this.apiUrl}/${encodeURIComponent(vendedor.Id_Vendedor)}`, { headers }).subscribe({
       next: (response) => {
         if (response.ok) {

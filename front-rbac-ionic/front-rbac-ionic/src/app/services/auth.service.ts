@@ -6,12 +6,17 @@ export type DbRole = 'db_datareader' | 'db_datawriter' | 'db_owner' | 'public';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  private baseUrl = 'https://mighty-breads-own.loca.lt/api';
+  private baseUrl = 'https://stereographic-martine-solitarily.ngrok-free.dev/api';
 
   constructor(private http: HttpClient) {}
 
   login(username: string, password: string) {
-    return this.http.post<any>(`${this.baseUrl}/auth/login`, { username, password }).pipe(
+    const headers = { 'ngrok-skip-browser-warning': 'true' };
+    return this.http.post<any>(
+      `${this.baseUrl}/auth/login`,
+      { username, password },
+      { headers }
+    ).pipe(
       tap((res) => {
         localStorage.setItem('token', res.data.token);
         localStorage.setItem('user', JSON.stringify(res.data.user)); // { username, dbRole }
