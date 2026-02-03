@@ -16,6 +16,6 @@ router.post("/", authMiddleware, allowDbRoles("db_datawriter", "db_owner"), pedi
 router.put("/:id", authMiddleware, allowDbRoles("db_datawriter", "db_owner"), pedidoController.update);
 
 // ELIMINAR -> owner
-router.delete("/:id", authMiddleware, allowDbRoles("db_owner"), pedidoController.remove);
+router.delete("/:id", authMiddleware, allowDbRoles("db_datawriter", "db_owner"), pedidoController.remove);
 
 module.exports = router;
